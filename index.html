@@ -52,22 +52,41 @@
   <script type="text/babel">
         const DATA = {
             alcohol: [
-                { id: 1, name: "1796 Old Fashioned", image: "img/1796_old_fashined_ilustracion.png", ingredients: ["5 cl Ron Santa Teresa 1796", "2 cl Sirope simple", "1 dash Angostura naranja", "10 gotas Bitter chocolate"] },
+                { id: 1, name: "1796 Old Fashioned", image: "img/1796_old_fashioned_ilustracion.png", ingredients: ["5 cl Ron Santa Teresa 1796", "2 cl Sirope simple", "1 dash Angostura naranja", "10 gotas Bitter chocolate"] },
                 { id: 2, name: "Aperol Spritz", image: "img/aperol_spritz_ilustracion.png", ingredients: ["9 cl Licor Aperol", "12.5 cl Prosecco Follador", "4 cl Soda"] },
                 { id: 3, name: "Babilonia", ingredients: ["5 cl Cachaça Iracema", "1.5 cl Sirope pomelo", "1 cl Amaro Ramazzotti", "3 cl Puré maracuyá"] },
                 { id: 4, name: "Banana Orange", image: "img/banana_orange_ilustracion.png", ingredients: ["5 cl Licor plátano", "2 cl Puré plátano", "12 cl Zumo naranja", "2.5 cl Vodka Khor"] },
                 { id: 5, name: "Bloody Mary", image: "img/bloody_mary_ilustracion.png", ingredients: ["5 cl Vodka Khor", "20 cl Zumo tomate", "1.5 cl Limón", "10 dashes Perrins", "2 Tabasco", "Pimienta y Sal de apio"] },
-                { id: 6, name: "Blue Peach Lemonade", image: "img/blue_peach_lemonade_ilustracion.png", ingredients: ["6 cl Licor melocotón", "1.5 cl Blue Curaçao", "2.5 cl Zumo limón", "Top 7up"] },
+                { id: 6, name: "Blue Peach Lemonade", image: "img/blue_peach_ilustracion.png", ingredients: ["6 cl Licor melocotón", "1.5 cl Blue Curaçao", "2.5 cl Zumo limón", "Top 7up"] },
                 { id: 7, name: "Caipirinha", image: "img/caipirinha_ilustracion.png", ingredients: ["6 cl Cachaça", "1/2 Lima cuñas", "4 cuch. Azúcar blanco", "Top Casera"] },
                 { id: 8, name: "Caipiroska", image: "img/caipiroska_ilustracion.png", ingredients: ["6 cl Vodka", "1/2 Lima cuñas", "3 cuch. Azúcar blanco", "Top Casera"] },
                 { id: 9, name: "Chandon Garden Spritz", image: "img/chandon_garden_spritz_ilustracion.png", ingredients: ["20 cl Chandon Garden (Botella 70 cl)"] },
                 { id: 10, name: "Coco Loco", image: "img/coco_loco_ilustracion.png", ingredients: ["5 cl Licor coco", "2 cl Puré coco", "2.5 cl Triple Seco", "12 cl Zumo piña"] },
                 { id: 11, name: "Cosmopolitan", ingredients: ["5 cl Vodka", "2.1 cl Triple Seco", "7 cl Zumo arándanos", "7 cl Zumo lima"] },
-                // ... el resto de cócteles siguen igual
+                { id: 12, name: "Daiquiri", ingredients: ["5 cl Ron Blanco", "2.5 cl Zumo lima", "2 cl Sirope azúcar"] },
+                { id: 13, name: "Dry Martini", ingredients: ["6 cl Ginebra", "1 cl Vermut Seco"] },
+                { id: 14, name: "Espresso Martini", ingredients: ["5 cl Vodka", "3 cl Café Espresso", "1.5 cl Licor de café", "0.5 cl Sirope azúcar"] },
+                { id: 15, name: "Margarita", ingredients: ["5 cl Tequila", "3 cl Triple Seco", "2 cl Zumo lima"] },
+                { id: 16, name: "Mojito", ingredients: ["5 cl Ron Blanco", "Zumo de media lima", "2 ramas de menta", "2 cucharaditas de azúcar", "Top Soda"] },
+                { id: 17, name: "Moscow Mule", ingredients: ["5 cl Vodka", "1.5 cl Zumo lima", "Top Ginger Beer"] },
+                { id: 18, name: "Negroni", ingredients: ["3 cl Ginebra", "3 cl Campari", "3 cl Vermut Rojo"] },
+                { id: 19, name: "Pina Colada", ingredients: ["5 cl Ron Blanco", "3 cl Crema de coco", "9 cl Zumo piña"] },
+                { id: 20, name: "Whisky Sour", ingredients: ["5 cl Whisky", "2.5 cl Zumo limón", "2 cl Sirope azúcar", "Clara de huevo (opcional)"] }
             ],
-            // ... resto de DATA (noAlcohol, guide) se mantiene igual
+            noAlcohol: [
+                { id: 101, name: "San Francisco", ingredients: ["Zumo naranja", "Zumo limón", "Zumo piña", "Granadina"] },
+                { id: 102, name: "Mojito 0.0", ingredients: ["Lima", "Menta", "Azúcar", "Ginger Ale"] }
+            ],
+            guide: {
+                premix: [
+                    { title: "Sirope Simple", body: "1 parte agua / 1 parte azúcar" }
+                ],
+                units: [
+                    { title: "cl", body: "Centilitros" },
+                    { title: "dash", body: "Golpe o chorrito" }
+                ]
+            }
         };
-
         const { useState, useMemo } = React;
 
         const Icon = ({ name, weight = "bold", className = "" }) => (
